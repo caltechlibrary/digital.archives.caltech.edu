@@ -1,0 +1,24 @@
+name: Deploy Site
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Upload to Amazon S3
+    runs-on: ubuntu-latest
+    # These permissions are needed to interact with GitHub's OIDC Token endpoint.
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set AWS credentials using preconfigured role and policy
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-region: us-west-2
+      - name: Copy files to the website bucket with the AWS CLI
+        run: |
+          aws s3 cp . s3://${{ secrets.AWS_BUCKET }} --exclude ".git*" --exclude "README.md"
