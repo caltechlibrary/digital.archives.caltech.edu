@@ -165,6 +165,11 @@
         text-decoration: var(--pico-text-decoration);
       }
     </style>
+    <style>/* search */
+      form[role="search"] {
+        margin: var(--pico-block-spacing-vertical) auto;
+      }
+    </style>
   </head>
   <body>
     <header class="container">
@@ -198,6 +203,14 @@
     </header>
     <main class="container">
       <h1>Digital Collections</h1>
+      <form role="search" action="https://collections.archives.caltech.edu/search">
+        <input type="search" name="q[]" placeholder="Search for Digital Objects" aria-label="Search for Digital Objects">
+        <input type="hidden" name="op[]" value="">
+        <select name="limit" id="limit" hidden>
+          <option value="digital_object" selected>Digital Objects</option>
+        </select>
+        <input type="submit" value="Search">
+      </form>
       <p>You can also find our collections at <a
         href="https://www.jstor.org/site/california-institute-of-technology/">JSTOR</a>, <a
         href="https://calisphere.org/institution/157/">Calisphere</a>, and the <a
