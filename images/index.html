@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@next/css/pico.min.css">
-    <script type="module" src="https://media.library.caltech.edu/cl-webcomponents/footer-global.js"></script> 
+    <script type="module" src="https://media.library.caltech.edu/cl-webcomponents/footer-global-lite.js"></script> 
     <title>Caltech Images Collection | Caltech Archives</title>
     <style>/* header with logo and menu */
       body > header {
@@ -205,19 +205,14 @@
         information. Upon request, we’ll remove material from public view while we address a rights issue.</p>
       </article>
     </main>
-    <footer-global
+    
+    <footer-global-lite
+      archives
       custom
-      header="Digital Collections"
-      phone="(626) 395-2704"
-      email="archives@caltech.edu"
-      instagram="https://www.instagram.com/caltecharchives/"
-      library-name="Caltech Archives & Special Collections" 
-      library-link="https://library.caltech.edu/archives"
-      mail-code="Mail Code B215A-74"
-      logo="archives">
-        <a slot="custom-links" class="custom-links" aria-label="footer navigation" target="_blank" href="https://www.caltech.edu/claimed-copyright-infringement">Claimed Copyright Infringement</a>
-        <a slot="custom-links" class="custom-links" aria-label="footer navigation" href="https://library.caltech.edu/about/privacy-policy">Privacy Notice</a>
-    </footer-global>
+      header="Digital Collections">
+        <a slot="custom-links" class="custom-links" aria-label="footer navigation" target="_blank" href="https://collections.archives.caltech.edu/">Collection Guides</a>
+        <a slot="custom-links" class="custom-links" aria-label="footer navigation" target="_blank" href="https://library.caltech.edu/archives/exhibits/digital">Digital Exhibits</a>
+    </footer-global-lite>
 
     <img referrerpolicy="no-referrer-when-downgrade" style="display: none;"
       src="https://caltechlibrary.matomo.cloud/matomo.php?idsite=5&amp;rec=1" style="border:0" alt="">
